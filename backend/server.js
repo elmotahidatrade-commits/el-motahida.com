@@ -13,8 +13,10 @@ const connectDB = require('./config/db');
 dotenv.config();
 
 // Connect to database
+const autoProvision = require('./provision');
 const startServer = async () => {
   await connectDB();
+  await autoProvision();
 };
 startServer();
 
