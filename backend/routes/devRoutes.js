@@ -152,12 +152,21 @@ router.post('/sync-cloudinary', async (req, res) => {
       }
     }
 
-    // Specific high-priority overrides
+    // Specific high-priority overrides and aliases
     if (mapping['intro']) settings.images.set('site-video', mapping['intro']);
     if (mapping['site-logo']) settings.images.set('site-logo', mapping['site-logo']);
+    
+    // Fix for "Pulp Machinery" (mapped to extra-04 in Frontend)
+    const pulpImg = mapping['expertise-01-pulp-machinery'] || mapping['expertise-01-pulp-machinery.jpg'];
+    if (pulpImg) settings.images.set('extra-04', pulpImg);
+
+    // Duplicate client logos to fill all 6 slots if only 3 are available
+    if (mapping['client-logo-01']) settings.images.set('client-logo-04', mapping['client-logo-01']);
+    if (mapping['client-logo-02']) settings.images.set('client-logo-05', mapping['client-logo-02']);
+    if (mapping['client-logo-03']) settings.images.set('client-logo-06', mapping['client-logo-03']);
 
     await settings.save();
-    res.json({ message: 'Cloudinary sync and auto-repair successful!', count: settings.images.size });
+    res.json({ message: 'Cloudinary sync, repair, and alias matching successful!', count: settings.images.size });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
