@@ -184,6 +184,7 @@ const heroSlideRoutes = require('./routes/heroSlideRoutes');
 const clientRoutes = require('./routes/clientRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
+const devRoutes = require('./routes/devRoutes');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
@@ -194,6 +195,7 @@ app.use('/api/hero-slides', heroSlideRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/dev', devRoutes);
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
