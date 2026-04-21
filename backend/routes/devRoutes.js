@@ -125,20 +125,37 @@ router.post('/sync-cloudinary', async (req, res) => {
     }
 
     // Comprehensive mapping: Save everything provided in the mapping to the images Map
-    // This ensures that even if keys like 'gallery-04-assembly-line' weren't in our hardcoded list,
-    // they get updated if they exist in the Cloudinary response.
     Object.keys(mapping).forEach(key => {
-        // We trim extensions or handle specific naming conventions if needed
-        // but generally we want to trust the mapping keys.
         settings.images.set(key, mapping[key]);
     });
 
-    // Handle specific high-priority aliases
+    // Auto-Repair Logic: If any existing key in settings.images is still pointing to /uploads/
+    // Try to find a match in the mapping
+    for (const [key, val] of settings.images) {
+      if (val.startsWith('/uploads/')) {
+        // Find filename from path: e.g. /uploads/photo_8...jpg -> photo_8...jpg
+        const filename = val.split('/').pop();
+        const basename = filename.split('.')[0]; // photo_8...
+
+        // Find a matching URL in the mapping
+        // Priority 1: Exact filename match
+        // Priority 2: Basename match
+        // Priority 3: Key prefix match
+        const match = mapping[filename] || mapping[basename] || mapping[Object.keys(mapping).find(m => key.startsWith(m) || m.startsWith(key))];
+        
+        if (match) {
+          settings.images.set(key, match);
+          console.log(`Auto-repaired [${key}] with ${match}`);
+        }
+      }
+    }
+
+    // Specific high-priority overrides
     if (mapping['intro']) settings.images.set('site-video', mapping['intro']);
     if (mapping['site-logo']) settings.images.set('site-logo', mapping['site-logo']);
 
     await settings.save();
-    res.json({ message: 'Cloudinary sync successful!', count: settings.images.size });
+    res.json({ message: 'Cloudinary sync and auto-repair successful!', count: settings.images.size });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
