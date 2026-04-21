@@ -37,7 +37,7 @@ export function SiteProvider({ children }) {
       const val = images[key];
       if (val) {
           if (val.startsWith('http')) return val;
-          return `http://localhost:5000${val}`;
+          return `https://el-motahidacom-production.up.railway.app${val}`;
       }
       return fallback;
   }

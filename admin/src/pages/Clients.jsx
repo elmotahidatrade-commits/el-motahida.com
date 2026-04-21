@@ -8,7 +8,7 @@ import Badge from '../components/ui/Badge';
 import ConfirmDialog from '../components/ui/ConfirmDialog';
 import toast from 'react-hot-toast';
 
-const API_BASE = 'http://localhost:5000';
+const API_BASE = 'https://el-motahidacom-production.up.railway.app';
 
 const Clients = () => {
   const navigate = useNavigate();

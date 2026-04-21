@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { X, Send, Settings, User, Mail, Building2, Phone } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://el-motahidacom-production.up.railway.app/api';
 
 const QuoteModal = () => {
   const { isQuoteModalOpen, setIsQuoteModalOpen } = useSite();

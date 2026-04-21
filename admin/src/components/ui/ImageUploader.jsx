@@ -3,7 +3,7 @@ import { Upload, X, Image as ImageIcon, Loader2 } from 'lucide-react';
 import api from '../../utils/api';
 import toast from 'react-hot-toast';
 
-const API_BASE = 'http://localhost:5000';
+const API_BASE = 'https://el-motahidacom-production.up.railway.app';
 
 const ImageUploader = ({ value, onChange, multiple = false }) => {
   const [uploading, setUploading] = useState(false);

@@ -40,7 +40,7 @@ const Login = () => {
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="http://localhost:5000/uploads/hero-bg-01.jpg" 
+          src="https://el-motahidacom-production.up.railway.app/uploads/hero-bg-01.jpg" 
           alt="Industrial Background" 
           className="w-full h-full object-cover opacity-30 mix-blend-luminosity grayscale scale-105"
         />
@@ -60,7 +60,7 @@ const Login = () => {
           <div className="flex flex-col items-center mb-10">
             <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl p-4 mb-6 border border-white/20 shadow-inner flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
               <img 
-                src="http://localhost:5000/uploads/site-logo.png" 
+                src="https://el-motahidacom-production.up.railway.app/uploads/site-logo.png" 
                 alt="Logo" 
                 className="w-full h-full object-contain"
                 onError={(e) => {
