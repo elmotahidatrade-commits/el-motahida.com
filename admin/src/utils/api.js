@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://el-motahidacom-production.up.railway.app/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://el-motahidacom-production.up.railway.app/api',
   headers: {
     'Content-Type': 'application/json',
   },

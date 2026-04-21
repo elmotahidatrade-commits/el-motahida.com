@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const SiteContext = createContext({});
-const API = 'https://el-motahidacom-production.up.railway.app/api';
+const API = import.meta.env.VITE_API_URL || 'https://el-motahidacom-production.up.railway.app/api';
 
 export function SiteProvider({ children }) {
   const [images, setImages] = useState({});
