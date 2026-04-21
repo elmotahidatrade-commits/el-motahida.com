@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1565C0;
+  --color-navy-dark: #050f1e;
+  --color-navy: #0d2251;
+  --color-accent: #00c853;
+  --color-background: #f0f4f8;
+  --color-textMain: #1a2035;
+  --color-textMuted: #64748b;
+  --color-borderC: #e2e8f0;
+  --color-danger: #e53935;
+
+  --font-display: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-cairo: "Cairo", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-background text-textMain antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+
+  [dir="rtl"] {
+    @apply font-cairo;
+  }
+}
+
+@layer components {
+  .admin-card {
+    @apply bg-white border border-borderC rounded-xl shadow-sm overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full h-11 px-4 bg-white border border-borderC rounded-lg text-sm text-textMain outline-none transition-all duration-200 focus:border-primary focus:ring-4 focus:ring-primary/5 placeholder:text-textMuted;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white font-semibold transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

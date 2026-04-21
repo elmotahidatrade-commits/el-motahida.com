@@ -1,0 +1,105 @@
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { 
+  LayoutDashboard, 
+  Package, 
+  FolderKanban, 
+  Wrench, 
+  Image as ImageIcon, 
+  FileText, 
+  Users, 
+  Settings, 
+  ChevronLeft, 
+  ChevronRight,
+  Monitor
+} from 'lucide-react';
+
+const navItems = [
+  { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
+  { icon: Package, label: 'Products', path: '/products' },
+  { icon: FolderKanban, label: 'Projects', path: '/projects' },
+  { icon: Wrench, label: 'Spare Parts', path: '/spare-parts' },
+  { icon: ImageIcon, label: 'Hero Slides', path: '/hero-slides' },
+  { icon: Monitor, label: 'Image Manager', path: '/images' },
+  { icon: FileText, label: 'Quote Requests', path: '/quotes', badge: 'new' },
+  { icon: Users, label: 'Clients', path: '/clients' },
+  { icon: Settings, label: 'Site Settings', path: '/settings' },
+];
+
+const Sidebar = ({ isOpen, setOpen, mobileOpen, setMobileOpen }) => {
+  const { pathname } = useLocation();
+
+  const NavItem = ({ icon: Icon, label, path, badge }) => (
+    <NavLink
+      to={path}
+      onClick={() => setMobileOpen(false)}
+      className={({ isActive }) => `
+        flex items-center gap-3 px-4 py-3.5 transition-all relative group
+        ${isActive 
+          ? 'bg-primary/10 text-primary border-l-4 border-primary' 
+          : 'text-white/60 hover:text-white hover:bg-white/5 border-l-4 border-transparent'}
+      `}
+    >
+      <Icon size={20} className="shrink-0" />
+      <span className={`text-sm font-semibold transition-opacity duration-300 ${!isOpen ? 'lg:opacity-0 lg:pointer-events-none' : 'opacity-100'}`}>
+        {label}
+      </span>
+      {!isOpen && (
+        <div className="absolute left-16 bg-navy-dark text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50">
+          {label}
+        </div>
+      )}
+    </NavLink>
+  );
+
+  return (
+    <>
+      {/* Mobile Overlay */}
+      {mobileOpen && (
+        <div 
+          className="fixed inset-0 bg-navy-dark/60 backdrop-blur-sm z-40 lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar Container */}
+      <aside 
+        className={`
+          fixed lg:static inset-y-0 left-0 z-50 bg-navy-dark flex flex-col transition-all duration-300
+          ${isOpen ? 'w-[240px]' : 'w-[240px] lg:w-16'}
+          ${mobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+        `}
+      >
+        {/* Logo */}
+        <div className="h-20 flex items-center px-5 border-b border-white/5">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
+            <span className="text-white font-bold text-xl">E</span>
+          </div>
+          <span className={`ml-3 text-white font-display font-bold text-lg tracking-tight transition-opacity ${!isOpen ? 'lg:opacity-0' : 'opacity-100'}`}>
+            EM Admin
+          </span>
+        </div>
+
+        {/* Navigation */}
+        <nav className="flex-1 py-6 overflow-y-auto overflow-x-hidden scrollbar-hide">
+          {navItems.map((item) => (
+            <NavItem key={item.path} {...item} />
+          ))}
+        </nav>
+
+        {/* Collapse Button (Desktop) */}
+        <button 
+          onClick={() => setOpen(!isOpen)}
+          className="hidden lg:flex h-16 items-center px-6 border-t border-white/5 text-white/40 hover:text-white transition-colors"
+        >
+          {isOpen ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
+          <span className={`ml-3 text-xs font-bold uppercase tracking-widest transition-opacity ${!isOpen ? 'opacity-0' : 'opacity-100'}`}>
+            Collapse Nav
+          </span>
+        </button>
+      </aside>
+    </>
+  );
+};
+
+export default Sidebar;

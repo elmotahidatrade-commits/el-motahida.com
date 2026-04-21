@@ -1,0 +1,13 @@
+@echo off
+echo Starting EL-Motahida Trade Applications...
+
+echo Starting Backend API (Port 5000)...
+start cmd /k "cd backend && npm run dev"
+
+echo Starting Admin Dashboard (Port 5174)...
+start cmd /k "cd admin && npm run dev -- --port 5174"
+
+echo Starting Client Frontend (Port 5173)...
+start cmd /k "cd frontend && npm run dev -- --port 5173"
+
+echo All services started! Close the popped-up terminal windows to stop them.
