@@ -117,7 +117,7 @@ const OEMSpareParts = () => {
           {/* Photo Strip */}
           <div className="flex gap-x-3 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-200">
             {galleryPhotos.map((photo) => (
-              <div key={photo.num} className="snap-start relative flex-none w-[calc(100vw/2.5)] md:w-[calc(100%/3-8px)] lg:w-[calc(14.28%-10px)] rounded-[8px] overflow-hidden group cursor-pointer">
+              <div key={photo.num} className="snap-start relative flex-none w-[60%] md:w-[calc(100%/3-8px)] lg:w-[calc(14.28%-10px)] rounded-[8px] overflow-hidden group cursor-pointer">
                 
                 {/* Number Badge */}
                 <div className="absolute top-[6px] left-[6px] w-[20px] h-[20px] bg-primary text-white rounded-full flex items-center justify-center text-[10px] font-bold z-10 shadow-sm">

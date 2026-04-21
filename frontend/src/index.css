@@ -18,6 +18,9 @@
 }
 
 @layer base {
+  html, body {
+    @apply overflow-x-hidden;
+  }
   body {
     @apply text-text-dark bg-bgLight font-sans antialiased;
   }

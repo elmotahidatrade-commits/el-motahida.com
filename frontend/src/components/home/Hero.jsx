@@ -24,21 +24,21 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 w-full h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 w-full">
           <div className="max-w-[800px]">
-            <h1 className="text-white font-display font-bold text-[clamp(28px,4.5vw,58px)] leading-[1.1] tracking-tight">
+            <h1 className="text-white font-display font-bold text-[clamp(24px,6vw,58px)] leading-[1.15] tracking-tight">
               {siteTitle}<br />
-              <span className="text-[0.6em] opacity-90 font-medium block mt-1 tracking-normal">{siteTagline}</span>
+              <span className="text-[0.55em] sm:text-[0.6em] opacity-90 font-medium block mt-2 sm:mt-1 tracking-normal">{siteTagline}</span>
             </h1>
-            <p className="text-white/80 text-[18px] max-w-[580px] mt-8 leading-relaxed font-sans italic border-l-2 border-primary pl-6 py-2">
+            <p className="text-white/80 text-[15px] sm:text-[18px] max-w-[580px] mt-6 sm:mt-8 leading-relaxed font-sans italic border-l-2 border-primary pl-5 sm:pl-6 py-2">
               "Quality you can trust — innovation you can rely on."
             </p>
             
             {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-5 mt-10">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-5 mt-8 sm:mt-10">
               <button 
                  onClick={() => setIsQuoteModalOpen(true)}
-                 className="bg-primary hover:bg-[#0d47a1] transition-all transform hover:scale-105 text-white px-10 py-4 rounded-md font-bold text-[15px] flex items-center justify-center gap-x-3 shadow-2xl shadow-primary/30"
+                 className="bg-primary hover:bg-[#0d47a1] transition-all transform hover:scale-105 text-white px-8 sm:px-10 py-3.5 sm:py-4 rounded-md font-bold text-[14px] sm:text-[15px] flex items-center justify-center gap-x-3 shadow-2xl shadow-primary/30 w-full sm:w-auto"
               >
                 Request a Quote
                 <ArrowRight size={18} />
