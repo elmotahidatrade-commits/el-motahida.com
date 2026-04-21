@@ -126,7 +126,9 @@ router.post('/sync-cloudinary', async (req, res) => {
 
     // Comprehensive mapping: Save everything provided in the mapping to the images Map
     Object.keys(mapping).forEach(key => {
-        settings.images.set(key, mapping[key]);
+        // Strip extensions like .jpg, .png etc to prevent Mongoose Map errors
+        const safeKey = key.split('.')[0];
+        settings.images.set(safeKey, mapping[key]);
     });
 
     // Auto-Repair Logic: If any existing key in settings.images is still pointing to /uploads/
