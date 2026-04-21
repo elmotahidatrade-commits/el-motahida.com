@@ -85,9 +85,9 @@ app.use((req, res, next) => {
     if (req.path === '/api/settings') {
       return res.json({
         siteName: { en: 'EL-Motahida Trade', ar: 'شركة المتحده للتجارة' },
-        email: 'Hamedsamaha75@gmail.com',
-        phone: '+201118964175',
-        landline: '0473861560',
+        email: 'elmotahidatrade@gmail.com',
+        phone: '+201068846536',
+        landline: '+201507887486',
         address: { en: 'Industrial Zone, Egypt', ar: 'المنطقة الصناعية، مصر' },
         images: {
         'hero-bg-01': '/uploads/hero-bg-01.jpg',

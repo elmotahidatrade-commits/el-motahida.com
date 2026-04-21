@@ -4,9 +4,9 @@ import { Globe, Phone, Mail, MapPin } from 'lucide-react';
 const Footer = () => {
   const { settings, img } = useSite();
   const address = settings?.address?.en || 'Industrial Area, Cairo, Egypt';
-  const phone = settings?.phone || '+201118964175';
-  const landline = settings?.landline || '0473861560';
-  const email = settings?.email || 'Hamedsamaha75@gmail.com';
+  const phone = settings?.phone || '+201068846536';
+  const landline = settings?.landline || '+201507887486';
+  const email = settings?.email || 'elmotahidatrade@gmail.com';
 
   return (
     <footer className="bg-navy-deep text-white/70 py-[60px] px-4 md:px-[5%] w-full">
@@ -64,7 +64,7 @@ const Footer = () => {
               <Phone className="w-4 h-4 text-primary shrink-0 mt-0.5" />
               <div className="flex flex-col gap-y-1">
                 <span>{phone}</span>
-                <span className="text-[11px] opacity-60">Landline: {landline}</span>
+                <span className="text-[11px] opacity-60">Phone 2: {landline}</span>
               </div>
             </li>
             <li className="flex items-center gap-x-3">

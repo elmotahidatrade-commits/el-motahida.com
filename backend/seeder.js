@@ -26,9 +26,9 @@ const seedData = async () => {
     // 2. Insert User-Provided Site Settings
     const settings = new SiteSettings({
       siteName: { en: 'EL-Motahida Trade', ar: 'شركة المتحده للتجارة' },
-      email: 'Hamedsamaha75@gmail.com',
-      phone: '+201118964175',
-      landline: '0473861560',
+      email: 'elmotahidatrade@gmail.com',
+      phone: '+201068846536',
+      landline: '+201507887486',
       address: {
         en: 'Industrial Area, Cairo, Egypt',
         ar: 'المنطقة الصناعية، القاهرة، مصر'
