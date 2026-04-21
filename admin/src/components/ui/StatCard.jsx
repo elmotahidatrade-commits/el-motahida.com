@@ -19,7 +19,9 @@ const StatCard = ({ icon: Icon, label, value, color = 'blue', linkTo }) => {
         </div>
         <div>
           <p className="text-xs font-bold text-textMuted uppercase tracking-wider">{label}</p>
-          <p className="text-2xl font-bold text-textMain mt-1">{value}</p>
+          <p className="text-2xl font-bold text-textMain mt-1">
+            {typeof value === 'object' ? JSON.stringify(value) : value}
+          </p>
         </div>
       </div>
       {linkTo && (

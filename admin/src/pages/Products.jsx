@@ -8,7 +8,8 @@ import Badge from '../components/ui/Badge';
 import ConfirmDialog from '../components/ui/ConfirmDialog';
 import toast from 'react-hot-toast';
 
-const API_BASE = 'https://el-motahidacom-production.up.railway.app';
+const API_URL = import.meta.env.VITE_API_URL || 'https://el-motahidacom-production.up.railway.app/api';
+const API_BASE = API_URL.replace('/api', '');
 
 const Products = () => {
   const navigate = useNavigate();

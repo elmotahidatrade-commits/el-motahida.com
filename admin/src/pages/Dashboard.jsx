@@ -42,13 +42,14 @@ const Dashboard = () => {
         ]);
 
         setStats({
-          products: Array.isArray(productsRes.data) ? productsRes.data.length : productsRes.data.total || 0,
-          projects: projectsRes.data?.length || 0,
-          newQuotes: quotesRes.data?.filter(q => q.status === 'new').length || 0,
-          clients: clientsRes.data?.length || 0
+          products: Array.isArray(productsRes.data) ? productsRes.data.length : productsRes.data?.total || 0,
+          projects: Array.isArray(projectsRes.data) ? projectsRes.data.length : 0,
+          newQuotes: Array.isArray(quotesRes.data) ? quotesRes.data.filter(q => q.status === 'new').length : 0,
+          clients: Array.isArray(clientsRes.data) ? clientsRes.data.length : 0
         });
-
-        const sortedQuotes = [...(quotesRes.data || [])].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        
+        const rawQuotes = Array.isArray(quotesRes.data) ? quotesRes.data : [];
+        const sortedQuotes = [...rawQuotes].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setRecentQuotes(sortedQuotes.slice(0, 5));
       } catch (error) {
         console.error('Failed to fetch dashboard data', error);

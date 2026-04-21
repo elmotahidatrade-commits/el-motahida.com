@@ -4,7 +4,8 @@ import api from '../utils/api';
 import Button from '../components/ui/Button';
 import toast from 'react-hot-toast';
 
-const API_BASE = 'https://el-motahidacom-production.up.railway.app';
+const API_URL = import.meta.env.VITE_API_URL || 'https://el-motahidacom-production.up.railway.app/api';
+const API_BASE = API_URL.replace('/api', '');
 
 const ImageManager = () => {
   const [images, setImages] = useState({});

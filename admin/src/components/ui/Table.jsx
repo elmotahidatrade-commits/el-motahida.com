@@ -29,7 +29,7 @@ const Table = ({ columns, data, onSort, isLoading = false }) => {
                 </div>
               </td>
             </tr>
-          ) : data.length > 0 ? (
+          ) : (Array.isArray(data) && data.length > 0) ? (
             data.map((row, rowIndex) => (
               <tr key={rowIndex} className="hover:bg-background/30 transition-colors">
                 {columns.map((col) => (
