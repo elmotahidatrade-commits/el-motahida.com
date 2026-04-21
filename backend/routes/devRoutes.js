@@ -115,23 +115,16 @@ router.post('/sync-cloudinary', async (req, res) => {
       settings = new SiteSettings({ images: {} });
     }
 
-    const siteKeys = [
-      'hero-bg-01', 'hero-bg-02', 'site-logo', 'site-logo-light', 'site-video',
-      'gallery-01-casting-unit', 'gallery-02-machining-center', 'gallery-03-quality-control',
-      'expertise-01-pulp-machinery', 'expertise-02-paper-machine-solutions', 'expertise-03-molded-fiber-tech',
-      'expertise-04-refining-systems', 'expertise-05-agitators-screens',
-      'product-01-double-disc-refiner', 'product-02-pressure-screen', 'product-03-high-density-cleaner', 'product-04-pulper-automation',
-      'trusted-01-turnkey-installations', 'trusted-02-custom-heavy-machinery', 'trusted-03-modernization-upgrades',
-      'project-01-paper-mill-mena', 'explore-01-technical-papers', 'explore-02-case-studies'
-    ];
+    // Comprehensive mapping: Save everything provided in the mapping to the images Map
+    // This ensures that even if keys like 'gallery-04-assembly-line' weren't in our hardcoded list,
+    // they get updated if they exist in the Cloudinary response.
+    Object.keys(mapping).forEach(key => {
+        // We trim extensions or handle specific naming conventions if needed
+        // but generally we want to trust the mapping keys.
+        settings.images.set(key, mapping[key]);
+    });
 
-    for (const key of siteKeys) {
-      const match = Object.keys(mapping).find(f => f.startsWith(key));
-      if (match) {
-        settings.images.set(key, mapping[match]);
-      }
-    }
-
+    // Handle specific high-priority aliases
     if (mapping['intro']) settings.images.set('site-video', mapping['intro']);
     if (mapping['site-logo']) settings.images.set('site-logo', mapping['site-logo']);
 
