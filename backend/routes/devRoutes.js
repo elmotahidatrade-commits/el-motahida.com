@@ -107,6 +107,15 @@ router.get('/nuke-and-seed', async (req, res) => {
   }
 });
 
+router.get('/inspect-settings', async (req, res) => {
+  try {
+    const settings = await SiteSettings.findOne();
+    res.json(settings);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 router.post('/sync-cloudinary', async (req, res) => {
   try {
     const mapping = req.body;
