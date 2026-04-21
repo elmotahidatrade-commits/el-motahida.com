@@ -16,9 +16,9 @@ const Footer = () => {
         <div className="flex flex-col">
           <div className="flex items-center gap-x-2 text-white mb-4">
             <img 
-              src={img('site-logo-light', null)} 
+              src={img('site-logo', null)} 
               alt="EL-MOTAHIDA" 
-              className="h-8 w-auto object-contain"
+              className="h-8 w-auto object-contain brightness-0 invert"
               onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'flex';
