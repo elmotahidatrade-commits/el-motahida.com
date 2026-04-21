@@ -16,12 +16,12 @@ const ExploreMore = () => {
   const [activeRegion, setActiveRegion] = useState("Middle East");
 
   const logos = [
-    img('client-logo-01', "https://via.placeholder.com/150"),
-    img('client-logo-02', "https://via.placeholder.com/150"),
-    img('client-logo-03', "https://via.placeholder.com/150"),
-    img('client-logo-04', "https://via.placeholder.com/150"),
-    img('client-logo-05', "https://via.placeholder.com/150"),
-    img('client-logo-06', "https://via.placeholder.com/150")
+    img('client-logo-01', "https://placehold.co/150"),
+    img('client-logo-02', "https://placehold.co/150"),
+    img('client-logo-03', "https://placehold.co/150"),
+    img('client-logo-04', "https://placehold.co/150"),
+    img('client-logo-05', "https://placehold.co/150"),
+    img('client-logo-06', "https://placehold.co/150")
   ];
 
   return (
