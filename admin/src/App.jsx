@@ -21,9 +21,26 @@ import ClientForm from './pages/ClientForm';
 import Settings from './pages/Settings';
 import ImageManager from './pages/ImageManager';
 
+import { Toaster } from 'react-hot-toast';
+
 function App() {
   return (
     <AuthProvider>
+      <Toaster 
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#fff',
+            color: '#1a2035',
+            fontWeight: '600',
+            fontSize: '14px',
+            borderRadius: '12px',
+            border: '1px solid #e2e8f0',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+          },
+        }}
+      />
       <BrowserRouter>
         <Routes>
           {/* Public Route */}

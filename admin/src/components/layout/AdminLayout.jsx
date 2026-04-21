@@ -16,21 +16,6 @@ const AdminLayout = () => {
 
   return (
     <div className="flex min-h-screen bg-background">
-      <Toaster 
-        position="top-right"
-        toastOptions={{
-          duration: 4000,
-          style: {
-            background: '#fff',
-            color: '#1a2035',
-            fontWeight: '600',
-            fontSize: '14px',
-            borderRadius: '12px',
-            border: '1px solid #e2e8f0',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-          },
-        }}
-      />
       
       <Sidebar 
         isOpen={sidebarOpen} 
