@@ -5,9 +5,15 @@ const SiteSettings = require('../models/SiteSettings');
 // @access  Public
 const getSettings = async (req, res) => {
   try {
-    const settings = await SiteSettings.findOne();
+    let settings = await SiteSettings.findOne();
     if (!settings) {
-      return res.status(404).json({ message: 'Settings not found' });
+      // Graceful fallback for empty databases
+      return res.json({ 
+        aboutTextAr: '', aboutTextEn: '', 
+        phone1: '', phone2: '', email: '', 
+        facebook: '', twitter: '', linkedin: '',
+        images: {}
+      });
     }
     // Return document 
     res.json(settings);
