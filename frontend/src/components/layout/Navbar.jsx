@@ -37,8 +37,8 @@ const Navbar = () => {
             e.target.style.display = 'none';
           }}
         />
-        <div className="flex flex-col">
-          <span className="font-display font-bold text-navy-deep text-[14px] md:text-[18px] leading-tight tracking-tight">
+        <div className="flex flex-col max-w-[180px] md:max-w-none">
+          <span className="font-display font-bold text-navy-deep text-[13px] md:text-[18px] leading-snug md:leading-tight tracking-tight">
             {siteName}
           </span>
           <span className="hidden md:block text-[10px] text-primary font-bold uppercase tracking-[0.2em] leading-tight opacity-80">

@@ -17,6 +17,9 @@
 }
 
 @layer base {
+  html, body {
+    @apply overflow-x-hidden;
+  }
   body {
     @apply font-body bg-background text-textMain antialiased;
   }

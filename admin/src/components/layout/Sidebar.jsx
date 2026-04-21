@@ -52,6 +52,9 @@ const Sidebar = ({ isOpen, setOpen, mobileOpen, setMobileOpen }) => {
     </NavLink>
   );
 
+  const API_URL = import.meta.env.VITE_API_URL || 'https://el-motahidacom-production.up.railway.app/api';
+  const BASE_URL = API_URL.replace('/api', '');
+
   return (
     <>
       {/* Mobile Overlay */}
@@ -71,13 +74,27 @@ const Sidebar = ({ isOpen, setOpen, mobileOpen, setMobileOpen }) => {
         `}
       >
         {/* Logo */}
-        <div className="h-20 flex items-center px-5 border-b border-white/5">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
-            <span className="text-white font-bold text-xl">E</span>
+        <div className="h-20 flex items-center px-4 border-b border-white/5">
+          <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 border border-white/10 overflow-hidden">
+             <img 
+               src={`${BASE_URL}/uploads/site-logo.png`}
+               className="w-7 h-7 object-contain"
+               alt="EMT"
+               onError={(e) => {
+                 e.target.style.display = 'none';
+                 e.target.nextSibling.style.display = 'block';
+               }}
+             />
+             <span className="hidden text-white font-bold text-xl">E</span>
           </div>
-          <span className={`ml-3 text-white font-display font-bold text-lg tracking-tight transition-opacity ${!isOpen ? 'lg:opacity-0' : 'opacity-100'}`}>
-            EM Admin
-          </span>
+          <div className={`ml-3 flex flex-col transition-opacity duration-300 ${!isOpen ? 'lg:opacity-0' : 'opacity-100'}`}>
+            <span className="text-white font-display font-bold text-[16px] tracking-tight leading-none">
+              EL-MOTAHIDA
+            </span>
+            <span className="text-primary font-bold text-[9px] uppercase tracking-[0.2em] mt-1 opacity-80">
+              CMD CENTER
+            </span>
+          </div>
         </div>
 
         {/* Navigation */}

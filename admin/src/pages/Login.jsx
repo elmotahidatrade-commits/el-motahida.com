@@ -35,12 +35,15 @@ const Login = () => {
     }
   };
 
+  const API_URL = import.meta.env.VITE_API_URL || 'https://el-motahidacom-production.up.railway.app/api';
+  const BASE_URL = API_URL.replace('/api', '');
+
   return (
-    <div className="min-h-screen bg-[#020814] flex items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-[#020814] flex items-center justify-center p-4 sm:p-6 relative overflow-hidden">
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://el-motahidacom-production.up.railway.app/uploads/hero-bg-01.jpg" 
+          src={`${BASE_URL}/uploads/hero-bg-01.jpg`}
           alt="Industrial Background" 
           className="w-full h-full object-cover opacity-30 mix-blend-luminosity grayscale scale-105"
         />
@@ -53,14 +56,14 @@ const Login = () => {
 
       <div className="max-w-md w-full z-10 animate-in fade-in zoom-in-95 duration-700">
         {/* Glassmorphic Login Card */}
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[32px] shadow-2xl p-8 sm:p-10 relative overflow-hidden group">
+        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[28px] sm:rounded-[32px] shadow-2xl p-6 sm:p-10 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
           
           {/* Logo Area */}
-          <div className="flex flex-col items-center mb-10">
-            <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-2xl p-4 mb-6 border border-white/20 shadow-inner flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+          <div className="flex flex-col items-center mb-8 sm:mb-10">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6 border border-white/20 shadow-inner flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
               <img 
-                src="https://el-motahidacom-production.up.railway.app/uploads/site-logo.png" 
+                src={`${BASE_URL}/uploads/site-logo.png`}
                 alt="Logo" 
                 className="w-full h-full object-contain"
                 onError={(e) => {
@@ -68,10 +71,10 @@ const Login = () => {
                   e.target.nextSibling.classList.remove('hidden');
                 }}
               />
-              <ShieldCheck size={40} className="text-primary hidden" />
+              <ShieldCheck size={36} className="text-primary hidden" />
             </div>
-            <h1 className="text-2xl font-bold text-white font-display tracking-tight">EL-MOTAHIDA TRADE</h1>
-            <p className="text-white/40 text-[11px] font-bold uppercase tracking-[0.3em] mt-2">Admin Command Center</p>
+            <h1 className="text-xl sm:text-2xl font-bold text-white font-display tracking-tight text-center">EL-MOTAHIDA TRADE</h1>
+            <p className="text-white/40 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.3em] mt-2">Admin Command Center</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

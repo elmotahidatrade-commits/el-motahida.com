@@ -24,8 +24,8 @@ const Footer = () => {
                 e.target.nextSibling.style.display = 'flex';
               }}
             />
-            <div className="hidden items-center gap-x-2">
-              <Globe className="text-primary w-6 h-6" />
+            <div className="flex items-center gap-x-2">
+              <Globe className="text-primary w-5 h-5" />
               <span className="font-display font-bold text-xl tracking-tight">EL-MOTAHIDA</span>
             </div>
           </div>

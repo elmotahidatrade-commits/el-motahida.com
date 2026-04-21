@@ -24,46 +24,46 @@ const Header = ({ setMobileOpen }) => {
   };
 
   return (
-    <header className="h-20 bg-white border-b border-borderC px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30">
+    <header className="h-16 md:h-20 bg-white border-b border-borderC px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30">
       <div className="flex items-center gap-4">
         {/* Mobile Toggle */}
         <button 
           onClick={() => setMobileOpen(true)}
           className="lg:hidden p-2 hover:bg-background rounded-lg text-textMain transition-colors"
         >
-          <Menu size={24} />
+          <Menu size={22} />
         </button>
         
-        <h1 className="text-xl font-bold text-textMain hidden sm:block">
+        <h1 className="text-lg md:text-xl font-bold text-textMain hidden sm:block">
           {getPageTitle(pathname)}
         </h1>
       </div>
 
       <div className="flex items-center gap-2 sm:gap-6">
         {/* Search - Hidden on Small Mobile */}
-        <div className="hidden md:flex items-center relative group">
+        <div className="hidden lg:flex items-center relative group">
           <Search size={18} className="absolute left-3 text-textMuted group-focus-within:text-primary transition-colors" />
           <input 
             type="text" 
             placeholder="Search records..." 
-            className="pl-10 pr-4 py-2 bg-background/50 border border-transparent rounded-full text-sm outline-none focus:bg-white focus:border-primary/30 focus:ring-4 focus:ring-primary/5 w-64 transition-all"
+            className="pl-10 pr-4 py-2 bg-background/50 border border-transparent rounded-full text-sm outline-none focus:bg-white focus:border-primary/30 focus:ring-4 focus:ring-primary/5 w-60 transition-all"
           />
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-2 sm:gap-3 border-l border-borderC pl-2 sm:pl-6">
+        <div className="flex items-center gap-2 sm:gap-3 md:border-l md:border-borderC md:pl-6">
           <button className="p-2 text-textMuted hover:text-primary hover:bg-primary/5 rounded-lg transition-all relative">
             <Bell size={20} />
             <span className="absolute top-2 right-2 w-2 h-2 bg-danger rounded-full border-2 border-white"></span>
           </button>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <div className="text-right hidden sm:block">
-              <p className="text-sm font-bold text-textMain leading-none">{user?.name || 'Admin User'}</p>
-              <p className="text-[11px] font-bold text-textMuted uppercase tracking-wider mt-1">{user?.role || 'Administrator'}</p>
+              <p className="text-xs md:text-sm font-bold text-textMain leading-none">{user?.name || 'Admin'}</p>
+              <p className="text-[10px] md:text-[11px] font-bold text-textMuted uppercase tracking-wider mt-1">{user?.role || 'Administrator'}</p>
             </div>
-            <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary overflow-hidden shadow-inner">
-               <User size={22} />
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary overflow-hidden shadow-inner">
+               <User size={18} />
             </div>
           </div>
 
