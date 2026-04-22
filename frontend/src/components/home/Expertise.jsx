@@ -6,18 +6,18 @@ const Expertise = () => {
   const { img } = useSite();
 
   const expertiseImages = [
-    { title: "Agate", img: img('Agate', null), span: "row-span-2 col-span-1" },
-    { title: "26 agate & Pin", img: img('26 agate & Pin', null), span: "col-span-1" },
-    { title: "Cap Felter", img: img('Cap Felter', null), span: "col-span-1" },
-    { title: "Coated Teflon Mould", img: img('Coated Teflon Mould', null), span: "col-span-1" },
-    { title: "Case Felter", img: img('Case Felter', null), span: "col-span-1" },
+    { title: "Agate", img: img('agate', null), span: "row-span-2 col-span-1" },
+    { title: "26 agate & Pin", img: img('26-agate-pin', null), span: "col-span-1" },
+    { title: "Cap Felter", img: img('cap-felter', null), span: "col-span-1" },
+    { title: "Coated Teflon Mould", img: img('coated-teflon-mould', null), span: "col-span-1" },
+    { title: "Case Felter", img: img('case-felter', null), span: "col-span-1" },
   ];
 
   const featuredProducts = [
-    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('Circular Knife', null) },
-    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('Holders Four Holes', null) },
+    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('circular-knife', null) },
+    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('holders-four-holes', null) },
     { title: "palette", desc: "Durable industrial palette.", img: img('palette', null) },
-    { title: "special Plastic Product", desc: "Unique specialized plastic product mould.", img: img('special Plastic Product', null) },
+    { title: "special Plastic Product", desc: "Unique specialized plastic product mould.", img: img('special-plastic-product', null) },
   ];
 
   return (

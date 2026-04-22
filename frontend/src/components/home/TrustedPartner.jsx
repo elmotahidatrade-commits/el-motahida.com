@@ -6,12 +6,12 @@ const TrustedPartner = () => {
   const { img } = useSite();
 
   const cards = [
-    { title: "26 agate & Pin", desc: "Technical spare part: 26 agate & Pin.", img: img('26 agate & Pin', null) },
-    { title: "Coated Teflon Mould", desc: "High-precision coated teflon mould.", img: img('Coated Teflon Mould', null) },
-    { title: "Male Press", desc: "Core machinery unit: Male Press.", img: img('Male Press', null) },
-    { title: "Fine industrial Pin", desc: "Micro-component: Fine industrial Pin.", img: img('Fine industrial Pin', null) },
-    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('Circular Knife', null) },
-    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('Holders Four Holes', null) },
+    { title: "26 agate & Pin", desc: "Technical spare part: 26 agate & Pin.", img: img('26-agate-pin', null) },
+    { title: "Coated Teflon Mould", desc: "High-precision coated teflon mould.", img: img('coated-teflon-mould', null) },
+    { title: "Male Press", desc: "Core machinery unit: Male Press.", img: img('male-press', null) },
+    { title: "Fine industrial Pin", desc: "Micro-component: Fine industrial Pin.", img: img('fine-industrial-pin', null) },
+    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('circular-knife', null) },
+    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('holders-four-holes', null) },
   ];
 
   return (
