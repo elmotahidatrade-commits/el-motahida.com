@@ -81,7 +81,7 @@ export function SiteProvider({ children }) {
         
         // 2. Define the exact filename mapping for industrial assets
         const industrialAssets = {
-            'agate': 'agate.jpg',
+            'agate': 'agate_industrial.jpg',
             '26-agate-pin': '26-agate-pin.jpg',
             'cap-felter': 'cap-felter.jpg',
             'coated-teflon-mould': 'coated-teflon-mould.jpg',
@@ -97,7 +97,7 @@ export function SiteProvider({ children }) {
             'felter-press-cap': 'felter-press-cap.jpg',
             'explore-01-technical-papers': 'explore-01-technical-papers.jpg',
             'explore-02-case-studies': 'explore-02-case-studies.jpg',
-            'explore-03-sustainability': 'expertise-03-molded-fiber-tech.jpg',
+            'explore-03-sustainability': 'sustainability_industrial.jpg',
             'explore-04-career-opportunities': 'explore-04-career-opportunities.jpg',
             'hero-bg-01': 'hero-bg-01.jpg',
             'hero-bg-02': 'hero-bg-02.jpg',
