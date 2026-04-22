@@ -6,12 +6,12 @@ const TrustedPartner = () => {
   const { img } = useSite();
 
   const cards = [
-    { title: "26 agate & Pin", desc: "Technical spare part: 26 agate & Pin.", img: img('trusted-01-turnkey-installations', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
-    { title: "Coated Teflon Mould", desc: "High-precision coated teflon mould.", img: img('trusted-02-custom-heavy-machinery', "https://images.unsplash.com/photo-1581091226033-bb2a4ce16e78?auto=format&fit=crop&q=80") },
-    { title: "Male Press", desc: "Core machinery unit: Male Press.", img: img('trusted-03-modernization-upgrades', "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80") },
-    { title: "Fine industrial Pin", desc: "Micro-component: Fine industrial Pin.", img: img('trusted-04-automation-control', "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80") },
-    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('trusted-05-preventative-maintenance', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
-    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('trusted-06-global-spares-delivery', "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80") },
+    { title: "Precision Agate & Pin System", desc: "Advanced technical spare part system including 26 agate and pin components.", img: img('trusted-01-turnkey-installations', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
+    { title: "Advanced Coated Teflon Mould", desc: "High-precision mould with advanced teflon coating for superior durability.", img: img('trusted-02-custom-heavy-machinery', "https://images.unsplash.com/photo-1581091226033-bb2a4ce16e78?auto=format&fit=crop&q=80") },
+    { title: "Core Male Press Unit", desc: "Essential core machinery unit: High-performance Male Press.", img: img('trusted-03-modernization-upgrades', "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80") },
+    { title: "Micro-Precision Industrial Pin", desc: "Precision-engineered micro-component for specialized industrial applications.", img: img('trusted-04-automation-control', "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80") },
+    { title: "Heavy-Duty Circular Knife", desc: "Professional industrial cutting tool for heavy-duty manufacturing processes.", img: img('trusted-05-preventative-maintenance', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
+    { title: "Custom Four-Hole Holders", desc: "Custom-designed precision part holder set with four-hole configuration.", img: img('trusted-06-global-spares-delivery', "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80") },
   ];
 
   return (
