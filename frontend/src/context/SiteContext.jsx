@@ -32,16 +32,17 @@ export function SiteProvider({ children }) {
             'site-logo-light': '/uploads/site-logo.png',
             'hero-bg-01': '/uploads/hero-bg-01.jpg',
             'hero-bg-02': '/uploads/hero-bg-02.jpg',
-            'expertise-01-pulp-machinery': '/uploads/26 agate & Pin.jpg',
-            'expertise-02-paper-machine-solutions': '/uploads/Cap Felter.jpg',
-            'expertise-03-molded-fiber-tech': '/uploads/Coated Teflon Mould.jpg',
-            'expertise-04-refining-systems': '/uploads/Case Felter.jpg',
-            'product-01-double-disc-refiner': '/uploads/Circular Knife.jpg',
-            'product-02-pressure-screen': '/uploads/Holders Four Holes.jpg',
-            'product-03-high-density-cleaner': '/uploads/palette.jpg',
-            'product-04-pulper-automation': '/uploads/special Plastic Product.jpg',
-            'trusted-01-turnkey-installations': '/uploads/26 agate & Pin.jpg',
-            'project-01-paper-mill-mena': '/uploads/project-01-paper-mill-mena.jpg'
+            'Agate': '/uploads/Agate.jpg',
+            '26 agate & Pin': '/uploads/26 agate & Pin.jpg',
+            'Cap Felter': '/uploads/Cap Felter.jpg',
+            'Coated Teflon Mould': '/uploads/Coated Teflon Mould.jpg',
+            'Case Felter': '/uploads/Case Felter.jpg',
+            'Circular Knife': '/uploads/Circular Knife.jpg',
+            'Holders Four Holes': '/uploads/Holders Four Holes.jpg',
+            'palette': '/uploads/palette.jpg',
+            'special Plastic Product': '/uploads/special Plastic Product.jpg',
+            'explore-01-technical-papers': '/uploads/explore-01-technical-papers.jpg',
+            'explore-02-case-studies': '/uploads/explore-02-case-studies.jpg'
           });
       });
   }, []);
