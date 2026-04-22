@@ -71,13 +71,16 @@ export function SiteProvider({ children }) {
   }, [spareParts]);
 
     const img = (key, fallback) => {
-        if (!images) return fallback;
+        if (!key) return fallback;
         
-        const val = images[key];
-        if (!val) return fallback;
-
-        // If it's one of our industrial assets, we serve it from local /uploads
-        const localAssets = {
+        // 1. Normalize key (convert to lowercase and replace spaces/special chars with hyphens)
+        const normalizedKey = key.toLowerCase().trim()
+            .replace(/ & /g, '-')
+            .replace(/ /g, '-')
+            .replace(/[^a-z0-9-]/g, '');
+        
+        // 2. Define the exact filename mapping for industrial assets
+        const industrialAssets = {
             'agate': 'agate.jpg',
             '26-agate-pin': '26-agate-pin.jpg',
             'cap-felter': 'cap-felter.jpg',
@@ -90,6 +93,7 @@ export function SiteProvider({ children }) {
             'male-press': 'male-press.jpg',
             'fine-industrial-pin': 'fine-industrial-pin.jpg',
             'mould': 'mould.jpg',
+            'retainer': 'retainer.jpg',
             'felter-press-cap': 'felter-press-cap.jpg',
             'explore-01-technical-papers': 'explore-01-technical-papers.jpg',
             'explore-02-case-studies': 'explore-02-case-studies.jpg',
@@ -102,14 +106,20 @@ export function SiteProvider({ children }) {
             'site-video': 'intro.mp4'
         };
 
-        if (localAssets[key]) {
-            return `/uploads/${localAssets[key]}`;
+        // 3. Match against our local industrial assets map
+        if (industrialAssets[normalizedKey]) {
+            return `/uploads/${industrialAssets[normalizedKey]}`;
         }
 
-        if (val.startsWith('http')) return val;
-        
-        const base = 'https://el-motahidacom-production.up.railway.app';
-        return `${base}${val}`;
+        // 4. Fallback to DB images if available
+        if (images && images[key]) {
+            const val = images[key];
+            if (val.startsWith('http')) return val;
+            const base = 'https://el-motahidacom-production.up.railway.app';
+            return `${base}${val}`;
+        }
+
+        return fallback;
     };
 
   return (
