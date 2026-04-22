@@ -6,10 +6,10 @@ const ExploreMore = () => {
   const { img, setIsQuoteModalOpen } = useSite();
 
   const exploreCards = [
-    { title: "Technical Papers", desc: "In-depth industrial engineering guides on mill installations, machinery maintenance, and technical best practices.", img: img('explore-01-technical-papers', "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80") },
-    { title: "Case Studies", desc: "Real-world success stories from across the region, detailing our comprehensive turnkey mill solutions and ROI deliverables.", img: img('explore-02-case-studies', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
-    { title: "Process Efficiency", desc: "Improving manufacturing performance through modern technology upgrades and system optimization for legacy mills.", img: img('explore-03-sustainability', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
-    { title: "Careers", desc: "Join an elite engineering team driving innovation and excellence in the industrial manufacturing sector.", img: img('explore-04-career-opportunities', "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80") }
+    { title: "Specialized Plastic Components", desc: "High-quality industrial plastic parts and specialized product moulds engineered for durability.", img: img('explore-01-technical-papers', "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80") },
+    { title: "Precision Industrial Pins", desc: "Advanced agate & pin sets and fine industrial fastening solutions for complex machinery.", img: img('explore-02-case-studies', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
+    { title: "Mechanical Engineering Tools", desc: "Very fine mechanical equipment and specialized tools designed for high-precision manufacturing.", img: img('explore-03-sustainability', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
+    { title: "Customized Industrial Moulds", desc: "Tailor-made industrial moulds and heavy-duty casting solutions for diverse production needs.", img: img('explore-04-career-opportunities', "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80") }
   ];
 
   const regions = ["Africa", "Europe", "India", "Latin America", "Middle East", "Russia", "South East Asia", "USA"];
