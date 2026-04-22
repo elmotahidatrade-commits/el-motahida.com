@@ -43,6 +43,14 @@ const Hero = () => {
                 Request a Quote
                 <ArrowRight size={18} />
               </button>
+
+              <a 
+                 href="#about"
+                 className="backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 transition-all text-white px-8 sm:px-10 py-3.5 sm:py-4 rounded-md font-bold text-[14px] sm:text-[15px] flex items-center justify-center gap-x-3 w-full sm:w-auto"
+              >
+                Discover Our Story
+                <span className="opacity-60">→</span>
+              </a>
             </div>
           </div>
         </div>

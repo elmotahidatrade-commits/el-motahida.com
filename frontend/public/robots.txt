@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /favicon.png
+Allow: /uploads/
+
+Sitemap: https://el-motahida-trade.com/sitemap.xml

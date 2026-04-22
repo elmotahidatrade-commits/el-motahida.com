@@ -6,16 +6,16 @@ const TrustedPartner = () => {
   const { img } = useSite();
 
   const cards = [
-    { title: "Turnkey Installations", desc: "Complete end-to-end setup and handover of industrial facilities.", img: img('trusted-01-turnkey-installations', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
-    { title: "Custom Heavy Machinery", desc: "Tailored manufacturing equipment designed for specific production needs.", img: img('trusted-02-custom-heavy-machinery', "https://images.unsplash.com/photo-1581091226033-bb2a4ce16e78?auto=format&fit=crop&q=80") },
-    { title: "Modernization Upgrades", desc: "Refurbishing inherited plants to meet modern efficiency standards.", img: img('trusted-03-modernization-upgrades', "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80") },
-    { title: "Automation & Control", desc: "Integrating smart technology and PLC systems to minimize downtime.", img: img('trusted-04-automation-control', "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80") },
-    { title: "Preventative Maintenance", desc: "Audits and proactive servicing to extend the lifetime of your components.", img: img('trusted-05-preventative-maintenance', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
-    { title: "Global Spares Delivery", desc: "Rapid supply of critical OEM parts to minimize operational pauses.", img: img('trusted-06-global-spares-delivery', "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80") },
+    { title: "26 agate & Pin", desc: "Technical spare part: 26 agate & Pin.", img: img('trusted-01-turnkey-installations', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
+    { title: "Coated Teflon Mould", desc: "High-precision coated teflon mould.", img: img('trusted-02-custom-heavy-machinery', "https://images.unsplash.com/photo-1581091226033-bb2a4ce16e78?auto=format&fit=crop&q=80") },
+    { title: "Male Press", desc: "Core machinery unit: Male Press.", img: img('trusted-03-modernization-upgrades', "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80") },
+    { title: "Fine industrial Pin", desc: "Micro-component: Fine industrial Pin.", img: img('trusted-04-automation-control', "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80") },
+    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('trusted-05-preventative-maintenance', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
+    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('trusted-06-global-spares-delivery', "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80") },
   ];
 
   return (
-    <section className="bg-gradient-to-br from-[#0d2251] to-[#0a1a3a] text-white">
+    <section id="trusted" className="bg-gradient-to-br from-[#0d2251] to-[#0a1a3a] text-white">
       {/* Top Description Area */}
       <div className="max-w-7xl mx-auto px-4 md:px-[5%] pt-[60px] pb-[40px]">
         <h2 className="text-[28px] font-bold font-display text-white">Your Trusted Partner for Complete Projects</h2>

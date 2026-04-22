@@ -11,7 +11,7 @@ const TurnkeyProjects = () => {
   const { img } = useSite();
 
   return (
-    <section className="relative w-full h-[420px] bg-navy-mid">
+    <section id="turnkey" className="relative w-full h-[420px] bg-navy-mid">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 4000, disableOnInteraction: true }}

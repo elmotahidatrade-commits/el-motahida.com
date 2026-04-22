@@ -38,10 +38,10 @@ const Footer = () => {
         <div className="flex flex-col">
           <h4 className="text-[16px] font-bold text-white mb-4 font-display">Quick Links</h4>
           <ul className="text-[13px] space-y-3">
-            <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">Career Opportunities</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">News & Events</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">Global Network</a></li>
+            <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="#expertise" className="hover:text-primary transition-colors">Expertise</a></li>
+            <li><a href="#manufacturing" className="hover:text-primary transition-colors">Our Facility</a></li>
+            <li><a href="#trusted" className="hover:text-primary transition-colors">Global Network</a></li>
           </ul>
         </div>
 
@@ -49,10 +49,10 @@ const Footer = () => {
         <div className="flex flex-col">
           <h4 className="text-[16px] font-bold text-white mb-4 font-display">Products</h4>
           <ul className="text-[13px] space-y-3">
-            <li><a href="#" className="hover:text-primary transition-colors">Turnkey Projects</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">OEM Spare Parts</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">Heavy Machinery</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">Automation Systems</a></li>
+            <li><a href="#turnkey" className="hover:text-primary transition-colors">Turnkey Projects</a></li>
+            <li><a href="#spare-parts" className="hover:text-primary transition-colors">OEM Spare Parts</a></li>
+            <li><a href="#expertise" className="hover:text-primary transition-colors">Heavy Machinery</a></li>
+            <li><a href="#spare-parts" className="hover:text-primary transition-colors">Automation Systems</a></li>
           </ul>
         </div>
 

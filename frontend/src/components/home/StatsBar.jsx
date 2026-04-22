@@ -2,10 +2,10 @@ import React from 'react';
 
 const StatsBar = () => {
   const stats = [
-    { num: "5", label: "Decades", suffix: " of Experience" },
+    { num: "11", label: "Years", suffix: " Legacy" },
     { num: "52+", label: "Turnkey", suffix: " Projects" },
-    { num: "522+", label: "Mills", suffix: " Installed" },
-    { num: "75+", label: "Countries", suffix: " Served" },
+    { num: "100+", label: "Mills", suffix: " Installed" },
+    { num: "5+", label: "Countries", suffix: " Served" },
     { num: "10+", label: "Mfg.", suffix: " Facility" },
     { num: "360°", label: "Solution", suffix: " Provider" }
   ];

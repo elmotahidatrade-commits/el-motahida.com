@@ -5,16 +5,16 @@ const OneStopPartner = () => {
   const { img } = useSite();
 
   return (
-    <section className="bg-white py-[80px] px-4 md:px-[5%] w-full">
+    <section id="about" className="bg-white py-[80px] px-4 md:px-[5%] w-full">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Column: Photo Frame */}
-        <div className="relative rounded-[12px] overflow-hidden shadow-2xl h-full min-h-[450px] border border-gray-100">
+        <div className="relative rounded-[12px] overflow-hidden shadow-2xl h-full min-h-[450px] border border-white/10 group">
           <img 
             src={img('onestop-hero', "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80")} 
             alt="El-Motahida Trade Industrial Excellence" 
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1a3a]/60 via-[#0a1a3a]/20 to-transparent mix-blend-multiply" />
         </div>
 
         {/* Right Column: Content */}

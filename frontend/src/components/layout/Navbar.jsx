@@ -25,48 +25,48 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`w-full bg-white transition-all duration-300 z-40 ${isSticky ? 'fixed top-0 shadow-[0_2px_8px_rgba(0,0,0,0.08)]' : 'relative'} h-[64px] flex items-center justify-between px-4 md:px-10`}>
+    <nav className={`w-full transition-all duration-300 z-40 ${isSticky ? 'fixed top-0 bg-[#0a1a3a]/95 backdrop-blur-md shadow-lg shadow-black/20' : 'relative bg-[#0a1a3a] border-b border-white/10'} h-[64px] flex items-center justify-between px-4 md:px-10`}>
       
       {/* LOGO */}
-      <div className="flex items-center gap-x-3 group cursor-pointer">
-        <img 
-          src={img('site-logo', null)} 
-          alt="EMT Logo" 
-          className="h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-          onError={(e) => {
-            e.target.style.display = 'none';
-          }}
-        />
+      <div className="flex items-center gap-x-2 md:gap-x-3 group cursor-pointer">
+        <div className="flex items-center gap-x-2">
+          <img 
+            src={img('site-logo', null)} 
+            alt="EMT Logo" 
+            className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+          <Globe size={20} className="text-[#3b82f6] transition-transform group-hover:rotate-12" />
+        </div>
         <div className="flex flex-col max-w-[180px] md:max-w-none">
-          <span className="font-display font-bold text-navy-deep text-[13px] md:text-[18px] leading-snug md:leading-tight tracking-tight">
+          <span className="font-display font-bold text-white text-[14px] md:text-[20px] leading-snug md:leading-tight tracking-tight uppercase">
             {siteName}
           </span>
-          <span className="hidden md:block text-[10px] text-primary font-bold uppercase tracking-[0.2em] leading-tight opacity-80">
+          <span className="hidden md:block text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] leading-tight mt-0.5">
             {siteSubtitle}
           </span>
         </div>
       </div>
 
       {/* NAV LINKS */}
-      <div className="hidden md:flex items-center gap-x-[16px]">
-        {navLinks.map((link) => (
-          <div key={link} className="flex items-center gap-x-1 cursor-pointer group">
-            <span className="text-[14px] text-[#1a2035] font-medium group-hover:text-primary transition-colors">
-              {link}
-            </span>
-            <ChevronDown size={14} className="text-[#1a2035] group-hover:text-primary transition-colors" />
-          </div>
-        ))}
+      <div className="hidden md:flex items-center gap-x-8">
+        <a href="#about" className="text-[13px] font-bold text-gray-300 uppercase tracking-wider hover:text-white transition-colors">About Us</a>
+        <a href="#expertise" className="text-[13px] font-bold text-gray-300 uppercase tracking-wider hover:text-white transition-colors">Expertise</a>
+        <a href="#turnkey" className="text-[13px] font-bold text-gray-300 uppercase tracking-wider hover:text-white transition-colors">Turnkey</a>
+        <a href="#spare-parts" className="text-[13px] font-bold text-gray-300 uppercase tracking-wider hover:text-white transition-colors">Spare Parts</a>
+        <a href="#trusted" className="text-[13px] font-bold text-gray-300 uppercase tracking-wider hover:text-white transition-colors">Partner</a>
       </div>
 
       {/* RIGHT UTILITIES */}
       <div className="flex items-center gap-x-3 md:gap-x-5">
-        <div className="bg-bgLight border border-borderC rounded-full px-2 md:px-3 py-1 flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors">
-          <span className="text-[11px] md:text-[12px] font-semibold text-text-dark">EN</span>
+        <div className="bg-white/10 border border-white/20 rounded-full px-2 md:px-3 py-1 flex items-center justify-center cursor-pointer hover:bg-white/20 transition-colors">
+          <span className="text-[11px] md:text-[12px] font-semibold text-white">EN</span>
         </div>
         <div className="flex items-center gap-x-2 cursor-pointer group">
-          <Search size={18} className="text-text-dark group-hover:text-primary transition-colors" />
-          <span className="hidden lg:inline text-[13px] font-medium text-text-dark group-hover:text-primary transition-colors uppercase tracking-wider">ENTER</span>
+          <Search size={18} className="text-gray-400 group-hover:text-white transition-colors" />
+          <span className="hidden lg:inline text-[13px] font-medium text-gray-300 group-hover:text-white transition-colors uppercase tracking-wider">ENTER</span>
         </div>
       </div>
     </nav>

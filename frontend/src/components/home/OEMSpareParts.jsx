@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, BarChart2, ArrowRight } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
 const OEMSpareParts = () => {
-  const { img } = useSite();
+  const { img, galleryItems } = useSite();
 
-  const galleryPhotos = [
-    { num: 1, src: img('gallery-01-casting-unit', "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?auto=format&fit=crop&q=80"), label: "Casting Unit" },
-    { num: 2, src: img('gallery-02-machining-center', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80"), label: "Machining Center" },
-    { num: 3, src: img('gallery-03-quality-control', "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80"), label: "Quality Control" },
-    { num: 4, src: img('gallery-04-assembly-line', "https://images.unsplash.com/photo-1581091226033-bb2a4ce16e78?auto=format&fit=crop&q=80"), label: "Assembly Line" },
-    { num: 5, src: img('gallery-05-testing-lab', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80"), label: "Testing Lab" },
-    { num: 6, src: img('gallery-06-shipping', "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80"), label: "Shipping" },
-    { num: 7, src: img('gallery-07-rd-facility', "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80"), label: "R&D Facility" }
-  ];
+  // Use a reliable fallback set if dynamic items are missing
+  const displayItems = galleryItems && galleryItems.length > 0 
+    ? galleryItems 
+    : [
+        { num: 1, src: img('gallery-01-casting-unit', "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?auto=format&fit=crop&q=80"), label: "Casting Unit" },
+        { num: 2, src: img('gallery-02-machining-center', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80"), label: "Machining Center" },
+        { num: 3, src: img('gallery-03-quality-control', "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80"), label: "Quality Control" },
+        { num: 5, src: img('gallery-05-testing-lab', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80"), label: "Testing Lab" }
+      ];
 
   return (
-    <section>
+    <section id="spare-parts">
       {/* SECTION A: OEM Spare Parts Form */}
       <div className="bg-white py-[40px] px-4 md:px-[5%] w-full">
         <div className="max-w-7xl mx-auto">
@@ -92,7 +92,7 @@ const OEMSpareParts = () => {
       </div>
 
       {/* SECTION B: Manufacturing Gallery */}
-      <div className="bg-white py-[50px] px-4 md:px-[5%] w-full">
+      <div id="manufacturing" className="bg-white py-[50px] px-4 md:px-[5%] w-full">
         <div className="max-w-7xl mx-auto">
           
           <div className="flex justify-between items-end mb-6">
@@ -116,7 +116,7 @@ const OEMSpareParts = () => {
 
           {/* Photo Strip */}
           <div className="flex gap-x-3 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-200">
-            {galleryPhotos.map((photo) => (
+            {displayItems.map((photo) => (
               <div key={photo.num} className="snap-start relative flex-none w-[60%] md:w-[calc(100%/3-8px)] lg:w-[calc(14.28%-10px)] rounded-[8px] overflow-hidden group cursor-pointer">
                 
                 {/* Number Badge */}

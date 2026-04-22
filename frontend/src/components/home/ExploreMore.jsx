@@ -6,10 +6,10 @@ const ExploreMore = () => {
   const { img, setIsQuoteModalOpen } = useSite();
 
   const exploreCards = [
-    { title: "Technical Papers", desc: "Read our deep dives into the latest paper production technologies.", img: img('explore-01-technical-papers', "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80") },
-    { title: "Case Studies", desc: "Real-world ROI analysis from our global turnkey deployments.", img: img('explore-02-case-studies', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
-    { title: "Sustainability", desc: "How our eco-friendly machinery is saving millions of gallons of water.", img: img('explore-03-sustainability', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
-    { title: "Career Opportunities", desc: "Join an engineering team that has been pushing boundaries for decades.", img: img('explore-04-career-opportunities', "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80") }
+    { title: "Technical Papers", desc: "In-depth industrial engineering guides on mill installations, machinery maintenance, and technical best practices.", img: img('explore-01-technical-papers', "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80") },
+    { title: "Case Studies", desc: "Real-world success stories from across the region, detailing our comprehensive turnkey mill solutions and ROI deliverables.", img: img('explore-02-case-studies', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
+    { title: "Process Efficiency", desc: "Improving manufacturing performance through modern technology upgrades and system optimization for legacy mills.", img: img('explore-03-sustainability', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
+    { title: "Careers", desc: "Join an elite engineering team driving innovation and excellence in the industrial manufacturing sector.", img: img('explore-04-career-opportunities', "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80") }
   ];
 
   const regions = ["Africa", "Europe", "India", "Latin America", "Middle East", "Russia", "South East Asia", "USA"];
@@ -69,7 +69,7 @@ const ExploreMore = () => {
                 />
                 <h2 className="text-[24px] font-bold text-[#1a2035] font-display">A Global Client Network</h2>
               </div>
-              <p className="text-[13px] text-text-muted mt-1">Trusted by leading paper mills across 75+ countries worldwide</p>
+              <p className="text-[13px] text-text-muted mt-1">Trusted by leading industrial mills across 5+ countries worldwide</p>
             </div>
 
             {/* Tabs */}

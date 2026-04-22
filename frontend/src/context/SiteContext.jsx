@@ -1,11 +1,20 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const SiteContext = createContext({});
-const API = import.meta.env.VITE_API_URL || 'https://el-motahidacom-production.up.railway.app/api';
+
+const getApiUrl = () => {
+  if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+    return 'http://localhost:5000/api';
+  }
+  return import.meta.env.VITE_API_URL || 'https://el-motahidacom-production.up.railway.app/api';
+};
+
+export const API = getApiUrl();
 
 export function SiteProvider({ children }) {
   const [images, setImages] = useState({});
   const [settings, setSettings] = useState({});
+  const [spareParts, setSpareParts] = useState([]);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   useEffect(() => {
@@ -31,19 +40,40 @@ export function SiteProvider({ children }) {
       });
   }, []);
 
+  useEffect(() => {
+    const fetchParts = async () => {
+      try {
+        const r = await fetch(`${API}/spare-parts`);
+        const data = await r.json();
+        setSpareParts(data);
+      } catch (error) {
+        console.error('Failed to fetch spare parts', error);
+      }
+    };
+    fetchParts();
+  }, []);
+
+  // Filter to show only active parts with images
+  const galleryItems = spareParts && spareParts.length > 0 
+    ? spareParts.map((part, index) => ({
+        num: index + 1,
+        src: part.images[0]?.startsWith('http') ? part.images[0] : `${API.replace('/api', '')}${part.images[0]}`,
+        label: part.partName
+      }))
+    : [];
+
   const img = (key, fallback = '') => {
-      // Fallback works if the image doesn't exist AND during loading. 
-      // The API returns partial paths like `/uploads/1.jpg`, we need the full path to hit backend.
       const val = images[key];
       if (val) {
           if (val.startsWith('http')) return val;
-          return `https://el-motahidacom-production.up.railway.app${val}`;
+          const base = API.replace('/api', '');
+          return `${base}${val}`;
       }
       return fallback;
   }
 
   return (
-    <SiteContext.Provider value={{ images, settings, img, isQuoteModalOpen, setIsQuoteModalOpen }}>
+    <SiteContext.Provider value={{ images, settings, img, isQuoteModalOpen, setIsQuoteModalOpen, spareParts, galleryItems, API }}>
       {children}
     </SiteContext.Provider>
   );
