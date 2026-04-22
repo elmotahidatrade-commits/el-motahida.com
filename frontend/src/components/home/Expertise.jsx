@@ -6,18 +6,18 @@ const Expertise = () => {
   const { img } = useSite();
 
   const expertiseImages = [
-    { title: "Agate", img: img('Agate', "https://images.unsplash.com/photo-1542744094-24638bfb6bb0?auto=format&fit=crop&q=80"), span: "row-span-2 col-span-1" },
-    { title: "26 agate & Pin", img: img('26 agate & Pin', "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"), span: "col-span-1" },
-    { title: "Cap Felter", img: img('Cap Felter', "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?auto=format&fit=crop&q=80"), span: "col-span-1" },
-    { title: "Coated Teflon Mould", img: img('Coated Teflon Mould', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80"), span: "col-span-1" },
-    { title: "Case Felter", img: img('Case Felter', "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80"), span: "col-span-1" },
+    { title: "Agate", img: img('Agate', null), span: "row-span-2 col-span-1" },
+    { title: "26 agate & Pin", img: img('26 agate & Pin', null), span: "col-span-1" },
+    { title: "Cap Felter", img: img('Cap Felter', null), span: "col-span-1" },
+    { title: "Coated Teflon Mould", img: img('Coated Teflon Mould', null), span: "col-span-1" },
+    { title: "Case Felter", img: img('Case Felter', null), span: "col-span-1" },
   ];
 
   const featuredProducts = [
-    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('Circular Knife', "https://images.unsplash.com/photo-1581091226033-bb2a4ce16e78?auto=format&fit=crop&q=80") },
-    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('Holders Four Holes', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
-    { title: "palette", desc: "Durable industrial palette.", img: img('palette', "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80") },
-    { title: "special Plastic Product", desc: "Unique specialized plastic product mould.", img: img('special Plastic Product', "https://images.unsplash.com/photo-1542744094-24638bfb6bb0?auto=format&fit=crop&q=80") },
+    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('Circular Knife', null) },
+    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('Holders Four Holes', null) },
+    { title: "palette", desc: "Durable industrial palette.", img: img('palette', null) },
+    { title: "special Plastic Product", desc: "Unique specialized plastic product mould.", img: img('special Plastic Product', null) },
   ];
 
   return (

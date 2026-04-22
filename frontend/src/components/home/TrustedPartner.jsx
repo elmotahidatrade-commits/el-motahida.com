@@ -6,12 +6,12 @@ const TrustedPartner = () => {
   const { img } = useSite();
 
   const cards = [
-    { title: "26 agate & Pin", desc: "Technical spare part: 26 agate & Pin.", img: img('26 agate & Pin', "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80") },
-    { title: "Coated Teflon Mould", desc: "High-precision coated teflon mould.", img: img('Coated Teflon Mould', "https://images.unsplash.com/photo-1581091226033-bb2a4ce16e78?auto=format&fit=crop&q=80") },
-    { title: "Male Press", desc: "Core machinery unit: Male Press.", img: img('Male Press', "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80") },
-    { title: "Fine industrial Pin", desc: "Micro-component: Fine industrial Pin.", img: img('Fine industrial Pin', "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80") },
-    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('Circular Knife', "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80") },
-    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('Holders Four Holes', "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80") },
+    { title: "26 agate & Pin", desc: "Technical spare part: 26 agate & Pin.", img: img('26 agate & Pin', null) },
+    { title: "Coated Teflon Mould", desc: "High-precision coated teflon mould.", img: img('Coated Teflon Mould', null) },
+    { title: "Male Press", desc: "Core machinery unit: Male Press.", img: img('Male Press', null) },
+    { title: "Fine industrial Pin", desc: "Micro-component: Fine industrial Pin.", img: img('Fine industrial Pin', null) },
+    { title: "Circular Knife", desc: "Industrial cutting tool: Circular Knife.", img: img('Circular Knife', null) },
+    { title: "Holders Four Holes", desc: "Precision part holder set (4 holes).", img: img('Holders Four Holes', null) },
   ];
 
   return (
