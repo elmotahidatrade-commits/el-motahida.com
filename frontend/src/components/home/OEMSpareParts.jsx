@@ -3,7 +3,59 @@ import { ChevronLeft, ChevronRight, BarChart2, ArrowRight } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
 const OEMSpareParts = () => {
-  const { img, galleryItems } = useSite();
+  const { img, galleryItems, API } = useSite();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+  
+  const [formData, setFormData] = useState({
+    companyName: '',
+    contactPerson: '',
+    email: '',
+    phone: '',
+    machineMake: '',
+    machineType: '',
+    partsRequired: ''
+  });
+
+  const [captcha] = useState({ q: '6 + 7', a: 13 });
+  const [userAnswer, setUserAnswer] = useState('');
+
+  const handleChange = (e) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    if (parseInt(userAnswer) !== captcha.a) {
+      setError('Incorrect captcha answer.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch(`${API}/quotes`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (!response.ok) throw new Error('Failed to submit request.');
+
+      setSuccess(true);
+      setFormData({
+        companyName: '', contactPerson: '', email: '', phone: '',
+        machineMake: '', machineType: '', partsRequired: ''
+      });
+      setUserAnswer('');
+    } catch (err) {
+      setError(err.message || 'Something went wrong.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Use a reliable fallback set if dynamic items are missing
   const displayItems = galleryItems && galleryItems.length > 0 
@@ -34,39 +86,48 @@ const OEMSpareParts = () => {
               <h2 className="text-[28px] font-bold text-white leading-[1.2] font-display">
                 Need OEM Spare Parts?<br />We've Got You Covered.
               </h2>
-              <p className="text-[14px] text-white/75 mt-[12px] mb-[24px] font-sans">
-                Request a quote for our premium machinery spare parts. Genuine parts ensure maximum durability and seamless integration.
-              </p>
-
-              <form className="w-full">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <input type="text" placeholder="Company Name" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
-                  <input type="text" placeholder="Contact Person" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
-                  <input type="email" placeholder="Email Address" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
-                  <input type="tel" placeholder="Phone Number" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
-                  <input type="text" placeholder="Machine Make" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
-                  <input type="text" placeholder="Machine Type" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
-                  
-                  <div className="md:col-span-2">
-                    <textarea placeholder="Parts Required (Please specify quantities)" rows={4} className="w-full bg-white rounded-[6px] py-[10px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50 resize-none"></textarea>
-                  </div>
+              
+              {success ? (
+                <div className="mt-6 bg-white/10 border border-white/20 p-6 rounded-lg text-center animate-in fade-in zoom-in duration-300">
+                  <div className="text-white font-bold text-lg mb-2">Request Sent!</div>
+                  <p className="text-white/80 text-sm">Thank you. Our team will contact you shortly with a quote.</p>
+                  <button onClick={() => setSuccess(false)} className="mt-4 text-white underline text-sm">Send another request</button>
                 </div>
+              ) : (
+                <>
+                  <p className="text-[14px] text-white/75 mt-[12px] mb-[24px] font-sans">
+                    Request a quote for our premium machinery spare parts. Genuine parts ensure maximum durability and seamless integration.
+                  </p>
 
-                <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-                  <div className="flex items-center gap-x-3 bg-white/20 rounded-[6px] px-4 h-[42px]">
-                    <span className="text-[12px] text-white font-medium">◎ 6 + 7 = ?</span>
-                    <input type="text" className="w-[40px] bg-white/10 text-white border-b border-white/40 outline-none text-center h-[24px] text-[13px]" />
-                  </div>
-                  <button type="submit" className="bg-white text-primary font-bold rounded-[6px] px-[24px] h-[42px] text-[14px] w-full sm:w-auto hover:bg-gray-100 transition-colors flex items-center justify-center gap-x-2 whitespace-nowrap">
-                    Request Quote 
-                    <ArrowRight size={16} />
-                  </button>
-                </div>
-                <div className="text-[11px] text-white/55 mt-2 text-center sm:text-left">
-                  This site is protected by reCAPTCHA and the Google Privacy Policy applies.
-                </div>
-              </form>
+                  <form onSubmit={handleSubmit} className="w-full">
+                    {error && <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 text-white text-[12px] rounded-md">{error}</div>}
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <input required name="companyName" value={formData.companyName} onChange={handleChange} type="text" placeholder="Company Name *" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
+                      <input required name="contactPerson" value={formData.contactPerson} onChange={handleChange} type="text" placeholder="Contact Person *" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
+                      <input required name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email Address *" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
+                      <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="Phone Number *" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
+                      <input name="machineMake" value={formData.machineMake} onChange={handleChange} type="text" placeholder="Machine Make" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
+                      <input name="machineType" value={formData.machineType} onChange={handleChange} type="text" placeholder="Machine Type" className="bg-white rounded-[6px] h-[42px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50" />
+                      
+                      <div className="md:col-span-2">
+                        <textarea name="partsRequired" value={formData.partsRequired} onChange={handleChange} placeholder="Parts Required (Please specify quantities) *" required rows={4} className="w-full bg-white rounded-[6px] py-[10px] px-[14px] text-[13px] text-[#1a2035] placeholder:text-[#9ca3af] outline-none focus:ring-2 focus:ring-white/50 resize-none"></textarea>
+                      </div>
+                    </div>
 
+                    <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+                      <div className="flex items-center gap-x-3 bg-white/20 rounded-[6px] px-4 h-[42px]">
+                        <span className="text-[12px] text-white font-medium">◎ {captcha.q} = ?</span>
+                        <input required value={userAnswer} onChange={(e) => setUserAnswer(e.target.value)} type="text" className="w-[40px] bg-white/10 text-white border-b border-white/40 outline-none text-center h-[24px] text-[13px]" />
+                      </div>
+                      <button disabled={loading} type="submit" className="bg-white text-primary font-bold rounded-[6px] px-[24px] h-[42px] text-[14px] w-full sm:w-auto hover:bg-gray-100 transition-colors flex items-center justify-center gap-x-2 whitespace-nowrap disabled:opacity-70">
+                        {loading ? 'Sending...' : 'Request Quote'} 
+                        <ArrowRight size={16} />
+                      </button>
+                    </div>
+                  </form>
+                </>
+              )}
             </div>
 
             {/* Right Content (Illustration placeholder) */}

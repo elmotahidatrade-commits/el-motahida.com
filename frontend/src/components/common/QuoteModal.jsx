@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { X, Send, Settings, User, Mail, Building2, Phone } from 'lucide-react';
 import { useSite } from '../../context/SiteContext';
 
-const API = 'https://el-motahidacom-production.up.railway.app/api';
-
 const QuoteModal = () => {
-  const { isQuoteModalOpen, setIsQuoteModalOpen } = useSite();
+  const { isQuoteModalOpen, setIsQuoteModalOpen, API } = useSite();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -135,7 +133,7 @@ const QuoteModal = () => {
                 <label className="text-[11px] font-bold text-textMuted uppercase tracking-wider block">Phone Number</label>
                 <div className="relative">
                   <Phone size={16} className="absolute left-3.5 top-[13px] text-textMuted" />
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full border border-borderC rounded-lg py-2.5 pl-10 pr-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+1..." />
+                  <input required type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full border border-borderC rounded-lg py-2.5 pl-10 pr-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+1..." />
                 </div>
               </div>
             </div>
