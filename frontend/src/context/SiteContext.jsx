@@ -70,15 +70,47 @@ export function SiteProvider({ children }) {
     }));
   }, [spareParts]);
 
-  const img = useCallback((key, fallback = '') => {
-      const val = images[key];
-      if (val) {
-          if (val.startsWith('http')) return val;
-          const base = API.replace('/api', '');
-          return `${base}${val}`;
-      }
-      return fallback;
-  }, [images]);
+    const img = (key, fallback) => {
+        if (!images) return fallback;
+        
+        const val = images[key];
+        if (!val) return fallback;
+
+        // If it's one of our industrial assets, we serve it from local /uploads
+        const localAssets = {
+            'agate': 'agate.jpg',
+            '26-agate-pin': '26-agate-pin.jpg',
+            'cap-felter': 'cap-felter.jpg',
+            'coated-teflon-mould': 'coated-teflon-mould.jpg',
+            'case-felter': 'case-felter.jpg',
+            'circular-knife': 'circular-knife.jpg',
+            'holders-four-holes': 'holders-four-holes.jpg',
+            'palette': 'palette.jpg',
+            'special-plastic-product': 'special-plastic-product.jpg',
+            'male-press': 'male-press.jpg',
+            'fine-industrial-pin': 'fine-industrial-pin.jpg',
+            'mould': 'mould.jpg',
+            'felter-press-cap': 'felter-press-cap.jpg',
+            'explore-01-technical-papers': 'explore-01-technical-papers.jpg',
+            'explore-02-case-studies': 'explore-02-case-studies.jpg',
+            'explore-03-sustainability': 'explore-03-sustainability.jpg',
+            'explore-04-career-opportunities': 'explore-04-career-opportunities.jpg',
+            'hero-bg-01': 'hero-bg-01.jpg',
+            'hero-bg-02': 'hero-bg-02.jpg',
+            'site-logo': 'site-logo.png',
+            'about-us-hero': 'industrial-facility-premium.png',
+            'site-video': 'intro.mp4'
+        };
+
+        if (localAssets[key]) {
+            return `/uploads/${localAssets[key]}`;
+        }
+
+        if (val.startsWith('http')) return val;
+        
+        const base = 'https://el-motahidacom-production.up.railway.app';
+        return `${base}${val}`;
+    };
 
   return (
     <SiteContext.Provider value={{ images, settings, img, isQuoteModalOpen, setIsQuoteModalOpen, spareParts, galleryItems, API }}>
