@@ -32,9 +32,15 @@ export function SiteProvider({ children }) {
             'site-logo-light': '/uploads/site-logo.png',
             'hero-bg-01': '/uploads/hero-bg-01.jpg',
             'hero-bg-02': '/uploads/hero-bg-02.jpg',
-            'expertise-01-pulp-machinery': '/uploads/expertise-01-pulp-machinery.jpg',
-            'product-01-double-disc-refiner': '/uploads/product-01-double-disc-refiner.jpg',
-            'trusted-01-turnkey-installations': '/uploads/trusted-01-turnkey-installations.jpg',
+            'expertise-01-pulp-machinery': '/uploads/26 agate & Pin.jpg',
+            'expertise-02-paper-machine-solutions': '/uploads/Cap Felter.jpg',
+            'expertise-03-molded-fiber-tech': '/uploads/Coated Teflon Mould.jpg',
+            'expertise-04-refining-systems': '/uploads/Case Felter.jpg',
+            'product-01-double-disc-refiner': '/uploads/Circular Knife.jpg',
+            'product-02-pressure-screen': '/uploads/Holders Four Holes.jpg',
+            'product-03-high-density-cleaner': '/uploads/palette.jpg',
+            'product-04-pulper-automation': '/uploads/special Plastic Product.jpg',
+            'trusted-01-turnkey-installations': '/uploads/26 agate & Pin.jpg',
             'project-01-paper-mill-mena': '/uploads/project-01-paper-mill-mena.jpg'
           });
       });
