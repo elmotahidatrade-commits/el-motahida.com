@@ -116,13 +116,7 @@ app.use((req, res, next) => {
 
     // Settings (Fixed baseline)
     if (req.path === '/api/settings') {
-      return res.json({
-        siteName: { en: 'EL-Motahida Trade', ar: 'شركة المتحده للتجارة' },
-        email: 'elmotahidatrade@gmail.com',
-        phone: '+201068846536',
-        landline: '+201507887486',
-        address: { en: 'Industrial Zone, Egypt', ar: 'المنطقة الصناعية، مصر' },
-        images: {
+      const newImages = {
         'hero-bg-01': '/uploads/hero-bg-01.jpg',
         'hero-bg-02': '/uploads/hero-bg-02.jpg',
         'agate': '/uploads/agate.jpg',
@@ -152,18 +146,29 @@ app.use((req, res, next) => {
         'client-logo-01': '/uploads/client-logo-01.jpg',
         'client-logo-02': '/uploads/client-logo-02.jpg',
         'client-logo-03': '/uploads/client-logo-03.jpg',
-        'about-us-hero': '/uploads/industrial_facility_premium.png',
+        'about-us-hero': '/uploads/industrial-facility-premium.png',
         'site-video': '/uploads/intro.mp4',
         'site-logo': '/uploads/site-logo.png'
+      };
+
+      // Background update
+      const Setting = mongoose.model('Setting');
+      Setting.findOne().then(s => {
+        if (s) {
+          s.images = newImages;
+          s.save();
         }
       });
-    }
 
-    // Empty responses for other endpoints
-    if (req.path === '/api/products') return res.json([]);
-    if (req.path === '/api/projects') return res.json([]);
-    if (req.path === '/api/clients') return res.json([]);
-    if (req.path === '/api/hero-slides') return res.json([]);
+      return res.json({
+        siteName: { en: 'EL-Motahida Trade', ar: 'شركة المتحده للتجارة' },
+        email: 'elmotahidatrade@gmail.com',
+        phone: '+201068846536',
+        landline: '+201507887486',
+        address: { en: 'Industrial Zone, Egypt', ar: 'المنطقة الصناعية، مصر' },
+        images: newImages
+      });
+    }
   }
   next();
 });
