@@ -19,6 +19,7 @@ const Footer = () => {
               src={img('site-logo', null)} 
               alt="EL-MOTAHIDA" 
               className="h-8 w-auto object-contain brightness-0 invert"
+              loading="lazy"
               onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'flex';

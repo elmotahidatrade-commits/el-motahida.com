@@ -82,7 +82,7 @@ const Expertise = () => {
             {featuredProducts.map((product, idx) => (
               <div key={idx} className="border border-borderC rounded-[8px] overflow-hidden bg-white hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(21,101,192,0.12)] transition-all duration-300 group cursor-pointer flex flex-col">
                 <div className="w-full h-[160px] overflow-hidden">
-                  <img src={product.img} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={product.img} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="p-4 flex flex-col flex-1">
                   <h3 className="text-[15px] font-semibold text-[#1a2035] font-display">{product.title}</h3>

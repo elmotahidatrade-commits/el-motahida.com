@@ -38,7 +38,7 @@ const ExploreMore = () => {
             {exploreCards.map((card, idx) => (
               <div key={idx} className="border border-borderC rounded-[8px] bg-white overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
                 <div className="w-full h-[160px] overflow-hidden">
-                  <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="p-4 pt-4 pb-3 flex-1 flex flex-col">
                   <h3 className="text-[15px] font-semibold text-[#1a2035] mb-[6px] font-display">{card.title}</h3>

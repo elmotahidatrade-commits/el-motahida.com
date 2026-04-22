@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useMemo, useCallback } from 'react';
 
 const SiteContext = createContext({});
 
@@ -54,15 +54,16 @@ export function SiteProvider({ children }) {
   }, []);
 
   // Filter to show only active parts with images
-  const galleryItems = spareParts && spareParts.length > 0 
-    ? spareParts.map((part, index) => ({
-        num: index + 1,
-        src: part.images[0]?.startsWith('http') ? part.images[0] : `${API.replace('/api', '')}${part.images[0]}`,
-        label: part.partName
-      }))
-    : [];
+  const galleryItems = useMemo(() => {
+    if (!spareParts || spareParts.length === 0) return [];
+    return spareParts.map((part, index) => ({
+      num: index + 1,
+      src: part.images[0]?.startsWith('http') ? part.images[0] : `${API.replace('/api', '')}${part.images[0]}`,
+      label: part.partName
+    }));
+  }, [spareParts]);
 
-  const img = (key, fallback = '') => {
+  const img = useCallback((key, fallback = '') => {
       const val = images[key];
       if (val) {
           if (val.startsWith('http')) return val;
@@ -70,7 +71,7 @@ export function SiteProvider({ children }) {
           return `${base}${val}`;
       }
       return fallback;
-  }
+  }, [images]);
 
   return (
     <SiteContext.Provider value={{ images, settings, img, isQuoteModalOpen, setIsQuoteModalOpen, spareParts, galleryItems, API }}>

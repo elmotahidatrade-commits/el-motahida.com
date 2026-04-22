@@ -186,7 +186,7 @@ const OEMSpareParts = () => {
                 </div>
 
                 <div className="h-[100px] w-full overflow-hidden">
-                  <img src={photo.src} alt={photo.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={photo.src} alt={photo.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                 </div>
                 
                 <p className="text-[11px] text-[#4a5568] text-center mt-1.5 font-medium group-hover:text-primary transition-colors">

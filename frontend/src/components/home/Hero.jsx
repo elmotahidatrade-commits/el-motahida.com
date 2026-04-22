@@ -17,6 +17,7 @@ const Hero = () => {
           loop 
           muted 
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover opacity-70 mix-blend-luminosity brightness-90 transition-opacity duration-1000"
         />
         <div className="absolute inset-0 bg-[#050f1e]/65 shadow-[inset_0_0_150px_rgba(21,101,192,0.25)]" />

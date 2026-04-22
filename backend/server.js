@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -25,6 +26,7 @@ const app = express();
 // Middleware
 app.use(cors({ origin: true, credentials: true })); 
 app.use(express.json());
+app.use(compression());
 app.use(helmet({ crossOriginResourcePolicy: false }));
 app.use(morgan('dev'));
 
@@ -174,8 +176,12 @@ app.use((req, res, next) => {
   next();
 });
 
-// Static folder for local uploads (if not using cloudinary initially)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Static Folder with Caching
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
+  maxAge: '30d',
+  etag: true,
+  lastModified: true
+}));
 
 // Swagger setup
 // const swaggerDocument = yaml.load('./swagger.yaml');
