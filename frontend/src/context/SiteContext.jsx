@@ -97,7 +97,7 @@ export function SiteProvider({ children }) {
             'felter-press-cap': 'felter-press-cap.jpg',
             'explore-01-technical-papers': 'explore-01-technical-papers.jpg',
             'explore-02-case-studies': 'explore-02-case-studies.jpg',
-            'explore-03-sustainability': 'explore-03-sustainability.jpg',
+            'explore-03-sustainability': 'expertise-03-molded-fiber-tech.jpg',
             'explore-04-career-opportunities': 'explore-04-career-opportunities.jpg',
             'hero-bg-01': 'hero-bg-01.jpg',
             'hero-bg-02': 'hero-bg-02.jpg',
