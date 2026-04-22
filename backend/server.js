@@ -158,7 +158,7 @@ app.use((req, res, next) => {
         'client-logo-01': '/uploads/client-logo-01.jpg',
         'client-logo-02': '/uploads/client-logo-02.jpg',
         'client-logo-03': '/uploads/client-logo-03.jpg',
-        'onestop-hero': '/uploads/industrial_facility_premium.png',
+        'about-us-hero': '/uploads/industrial_facility_premium.png',
         'site-video': '/uploads/intro.mp4',
         'site-logo': '/uploads/site-logo.png'
         }

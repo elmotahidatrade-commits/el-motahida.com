@@ -34,11 +34,7 @@ const Navbar = () => {
             src={img('site-logo', null)} 
             alt="EMT Logo" 
             className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
           />
-          <Globe size={20} className="text-[#3b82f6] transition-transform group-hover:rotate-12" />
         </div>
         <div className="flex flex-col max-w-[180px] md:max-w-none">
           <span className="font-display font-bold text-white text-[14px] md:text-[20px] leading-snug md:leading-tight tracking-tight uppercase">

@@ -39,25 +39,6 @@ const Expertise = () => {
               Comprehensive industrial solutions engineered with decades of precision.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="border-b md:border-b-0 border-r border-[#e2e8f0] pb-4 md:pb-0 pr-4">
-                <div className="text-[22px] font-bold text-primary font-display">11+</div>
-                <div className="text-[12px] text-text-muted font-medium">Years Legacy</div>
-              </div>
-              <div className="border-b md:border-b-0 border-[#e2e8f0] pb-4 md:pb-0">
-                <div className="text-[22px] font-bold text-primary font-display">100+</div>
-                <div className="text-[12px] text-text-muted font-medium">Mills Installed</div>
-              </div>
-              <div className="border-r border-[#e2e8f0] pt-4 pr-4">
-                <div className="text-[22px] font-bold text-primary font-display">5+</div>
-                <div className="text-[12px] text-text-muted font-medium">Countries</div>
-              </div>
-              <div className="pt-4">
-                <div className="text-[22px] font-bold text-primary font-display">360°</div>
-                <div className="text-[12px] text-text-muted font-medium">Solutions</div>
-              </div>
-            </div>
-
             <button className="bg-primary hover:bg-[#0d47a1] text-white px-5 py-[10px] rounded-[4px] text-[13px] font-semibold w-fit transition-colors">
               Read More... &rarr;
             </button>

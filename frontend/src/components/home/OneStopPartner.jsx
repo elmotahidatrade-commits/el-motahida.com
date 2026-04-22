@@ -10,7 +10,7 @@ const OneStopPartner = () => {
         {/* Left Column: Photo Frame */}
         <div className="relative rounded-[12px] overflow-hidden shadow-2xl h-full min-h-[450px] border border-white/10 group">
           <img 
-            src={img('onestop-hero', "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80")} 
+            src={img('about-us-hero', "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80")} 
             alt="El-Motahida Trade Industrial Excellence" 
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
